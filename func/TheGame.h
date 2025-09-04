@@ -110,7 +110,8 @@ void TheGame(std::vector<std::vector<int>>& ships1, std::vector<std::vector<int>
         }
     }
     if((shipsingame - hits1) == 0)
-        std::cout << "\nPlayer 1 won in " << NumofTurns << " rounds.\n";
+        std::cout << "\nPlayer 1 won in " << NumofTurns << " rounds. Total number of shots: " << NumofTurns * 2 - 1 << "\n";
     else
-        std::cout << "\nPlayer 2 won in " << NumofTurns << " rounds.\n";
+        std::cout << "\nPlayer 2 won in " << NumofTurns << " rounds. Total number of shots: " << NumofTurns * 2  << "\n";
+
 }
