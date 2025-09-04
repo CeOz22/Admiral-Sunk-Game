@@ -3,9 +3,9 @@
 int main()
 {
     gameRowCol gRowCol;
-    gRowCol.setRowCol();
-    int gamerow = gRowCol.setGameRow();
-    int gamecol = gRowCol.setGameCol();
+    const int mode = gRowCol.setRowCol();
+    const int gamerow = gRowCol.setGameRow();
+    const int gamecol = gRowCol.setGameCol();
 
     std::vector<std::vector<int>> ships1(gamerow, std::vector<int>(gamecol));
     std::vector<std::vector<int>> ships2(gamerow, std::vector<int>(gamecol));
@@ -17,10 +17,11 @@ int main()
         }
     }
 
-    int shipsingame = ShipsInGame(gamerow, gamecol);
+    const int shipsingame = ShipsInGame(gamerow, gamecol, mode));
 
     GameFieldDesign(ships1, ships2, gamerow, gamecol, shipsingame);
     TheGame(ships1, ships2, gamerow, gamecol, shipsingame);
     
     return 0;
+
 }
