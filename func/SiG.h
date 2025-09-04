@@ -1,9 +1,9 @@
-int ShipsInGame(int gamerow, int gamecol){
+int ShipsInGame(int gamerow, int gamecol, int mode){
     int Inter = 5;
     int shipsingame;
     std::string SiG;
-    int max = gamerow * gamecol / 7;
-    while(true){
+    int max = gamerow * gamecol / 5;
+    while(mode == 1){
         std::cout << "\nHow many ships will be in the game (Min: 1 - Max: " << (max) <<"): " << std::flush;
         std::cin >> SiG;
         IfDigit(&SiG, &shipsingame, &Inter);
@@ -21,5 +21,7 @@ int ShipsInGame(int gamerow, int gamecol){
         }else
             break;
     }
+    if(mode == 0)
+        shipsingame = 20;
     return shipsingame;
 }
