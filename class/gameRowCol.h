@@ -6,9 +6,9 @@ class gameRowCol{
         int Inter = 5;
     public:
 
-        std::string setRowCol(){
+        int setRowCol(){
             std::cout << "\nDo you want to play the default version(0) of the game or the customized version(1): " << std::flush;
-            while(true){                
+            while(true){
                 std::cin >> modeS;
                 IfDigit(&modeS, &mode, &Inter);
                 if(Inter == 6){
@@ -17,7 +17,7 @@ class gameRowCol{
                     continue;
                 };
                 if(mode == 0)
-                    break;
+                    return mode;
                 else if(mode != 1){
                     std::cout << "Invalid! Please enter one of the specified numbers, default(0) and customized(1): ";
                     continue;
@@ -52,7 +52,7 @@ class gameRowCol{
                         }
 
                     }while((gamerow < 5 || gamerow > gameMaxRow) || (gamecol < 5 || gamecol > gameMaxRow));
-                    break;
+                    return mode;
             }
         }
         int setGameRow(){
@@ -60,5 +60,8 @@ class gameRowCol{
         }
         int setGameCol(){
             return gamecol;
+        }
+        int getmode(){
+            return mode;
         }
 };
