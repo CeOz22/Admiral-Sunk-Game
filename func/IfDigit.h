@@ -1,9 +1,7 @@
 int IfDigit(const std::string* ciN, int* Int, int* Intermediate){
-    bool allDigits = true;
     static int Imcounter = 0;
     for(char c : *ciN) {
         if (!isdigit(c)) {
-            allDigits = false;
             Imcounter++;
             if(Imcounter > 10 && Imcounter <= 20)
                 std::cout << "Are you an imbecile?\n";
@@ -17,4 +15,5 @@ int IfDigit(const std::string* ciN, int* Int, int* Intermediate){
         }
     }
     return *Int = stoi(*ciN);
+
 }
