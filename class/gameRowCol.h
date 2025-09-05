@@ -25,7 +25,7 @@ class gameRowCol{
                 
                 std::cout << "How many rows and colums will be in the game (Min: 5 - Max: " << gameMaxRow <<")\n";
                     do{
-                        std::cout << "Row: ";
+                        std::cout << "Row: " << std::flush;;
                         std::cin >> gamerowS;
                         IfDigit(&gamerowS, &gamerow, &Inter);
                         if(Inter == 6){
@@ -38,7 +38,7 @@ class gameRowCol{
                             continue;
                         }
 
-                        std::cout << "Column: ";
+                        std::cout << "Column: " << std::flush;;
                         std::cin >> gamecolS;
                         IfDigit(&gamecolS, &gamecol, &Inter);
                         if(Inter == 6){
@@ -60,8 +60,5 @@ class gameRowCol{
         }
         int setGameCol(){
             return gamecol;
-        }
-        int getmode(){
-            return mode;
         }
 };
