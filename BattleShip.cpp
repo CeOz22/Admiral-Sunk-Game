@@ -1,0 +1,25 @@
+#include "BattleShip.h"
+
+int main()
+{
+    gameRowCol gRowCol;
+    const int mode = gRowCol.setRowCol();
+    const int gamerow = gRowCol.setGameRow();
+    const int gamecol = gRowCol.setGameCol();
+
+    std::vector<std::vector<int>> ships1(gamerow, std::vector<int>(gamecol));
+    std::vector<std::vector<int>> ships2(gamerow, std::vector<int>(gamecol));
+
+    for(int i = 0; i < gamerow; i++){
+        for(int j = 0; j < gamecol; j++){
+            ships1[i][j] = 0;
+            ships2[i][j] = 0;
+        }
+    }
+    const int shipsingame = ShipsInGame(gamerow, gamecol, mode);
+
+    GameFieldDesign(ships1, ships2, gamerow, gamecol, shipsingame);
+    TheGame(ships1, ships2, gamerow, gamecol, shipsingame);
+    
+    return 0;
+}

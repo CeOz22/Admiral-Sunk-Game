@@ -1,0 +1,12 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <ctime>
+#include <random>
+#include <array>
+#include "func/IfDigit.h"
+#include "func/Display.h"
+#include "class/gameRowCol.h"
+#include "func/SiG.h"
+#include "func/GameFieldDesign.h"
+#include "func/TheGame.h"
