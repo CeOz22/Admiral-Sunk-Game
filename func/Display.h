@@ -4,9 +4,7 @@ void Display(const std::vector<std::vector<int>>& s1, const std::vector<std::vec
             for (int j : i) {
                 switch(j){
                     case 0:
-                        std::cout << "O ";
-                        break;
-                    case 1:                     // This is actually for the letter C, but when it is not added here, the display is incomplete.
+                    case 1:                                     // This is actually for the letter C, but when it is not added here, the display is incomplete.
                         std::cout << "O ";
                         break;
                     case 2:
@@ -24,8 +22,6 @@ void Display(const std::vector<std::vector<int>>& s1, const std::vector<std::vec
             for (int j : i) {
                 switch(j){
                     case 0:
-                        std::cout << "O ";
-                        break;
                     case 1:
                         std::cout << "O ";
                         break;
