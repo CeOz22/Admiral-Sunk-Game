@@ -1,9 +1,0 @@
-#include <iostream>
-#include <string>
-#include <vector>
-#include "func/IntIfDigit.h"
-#include "func/voidDisplay.h"
-#include "class/gameRowCol.h"
-#include "func/IntSiG.h"
-#include "func/voidGameFieldDesign.h"
-#include "func/voidTheGame.h"
