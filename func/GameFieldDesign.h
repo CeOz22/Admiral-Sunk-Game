@@ -1,13 +1,8 @@
 #include "../class/randomship.h"
-std::array<int, 4> getCount(int shipsIngame);
 void GameFieldDesign(std::vector<std::vector<int>>& ships1, std::vector<std::vector<int>>& ships2, int gamerow, int gamecol, int shipsingame){
     int Inter = 5;
-    std::string rowS, columnS;
-    int row, column;
-    int shipcounter = 0;
-    std::string rs;
-
-    auto shipcount = getCount(shipsingame);
+    std::string rs, rowS, columnS;
+    int row, column, shipcounter = 0;
     bool randomness = false;
 
     std::cout << "Do you want to place ships randomly (Yes - No): " << std::flush;
@@ -18,7 +13,7 @@ void GameFieldDesign(std::vector<std::vector<int>>& ships1, std::vector<std::vec
                 randomness = true;
                 int fieldcount[4] = {1, 2, 3, 4};
                 randomship random;
-                random.setrandom(ships1, shipcount, fieldcount, gamerow, gamecol);
+                random.putrandom(ships1, shipsingame, fieldcount, gamerow, gamecol);
                 std::cout << "\nPlayer 1's gamefield:" << std::endl;
                 for(int i = 0; i < gamerow; i++){
                     for(int j = 0; j < gamecol; j++){
@@ -31,8 +26,8 @@ void GameFieldDesign(std::vector<std::vector<int>>& ships1, std::vector<std::vec
                 }
                 system("pause");
                 system("CLS");
-
-                random.setrandom(ships2, shipcount, fieldcount, gamerow, gamecol);
+                
+                random.putrandom(ships2, shipsingame, fieldcount, gamerow, gamecol);
                 std::cout << "Player 2's gamefield:" << std::endl;
                 for(int i = 0; i < gamerow; i++){
                     for(int j = 0; j < gamecol; j++){
@@ -54,7 +49,7 @@ void GameFieldDesign(std::vector<std::vector<int>>& ships1, std::vector<std::vec
         }
     }
 
-    if(randomness == 0){
+    if(!randomness){
         std::cout << "\nPlayer 1\nWhich row and column do you want to put the ships in?\n";
         do{
             std::cout << "Row: ";
@@ -153,33 +148,5 @@ void GameFieldDesign(std::vector<std::vector<int>>& ships1, std::vector<std::vec
         }while(shipcounter < shipsingame);
         system("pause");
         system ("CLS");
-    }
-}
-std::array<int, 4> getCount(int shipsIngame){
-    switch(shipsIngame){                            // If the player wants the ships to be placed randomly, the ships will be designed according to the shipsingame variable. 
-        case 20:    return {4, 3, 2, 1};
-        case 19:    return {3, 3, 2, 1};
-        case 18:    return {4, 2, 2, 1};
-        case 17:    return {3, 2, 2, 1};
-        case 16:    return {3, 3, 1, 1};
-        case 15:    return {4, 2, 1, 1};
-
-        case 14:    return {4, 2, 2, 0};
-        case 13:    return {3, 2, 2, 0};
-        case 12:    return {3, 3, 1, 0};
-        case 11:    return {2, 3, 1, 0};
-        case 10:    return {3, 2, 1, 0};
-        case 9:     return {2, 2, 1, 0};
-
-        case 8:     return {4, 2, 0, 0};
-        case 7:     return {3, 2, 0, 0};
-        case 6:     return {2, 2, 0, 0};
-        case 5:     return {3, 1, 0, 0};
-        case 4:     return {2, 1, 0, 0};
-
-        case 3:     return {3, 0, 0, 0};
-        case 2:     return {2, 0, 0, 0};
-        case 1:     return {1, 0, 0, 0};
-        default:    exit(1);
     }
 }
